@@ -1,0 +1,16 @@
+<h2>Ngrx example</h2>
+<h2>Count: {{ count$ | async }}</h2>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+
+<button (click)="load()">Load Users</button>
+
+    <p *ngIf="loading$ | async">Loading...</p>
+    <p *ngIf="error$ | async as err">Error: {{ err }}</p>
+
+    <ul>
+      <li *ngFor="let user of users$ | async">
+        {{ user.name }}
+      </li>
+    </ul>
+<router-outlet></router-outlet>
